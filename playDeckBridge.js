@@ -19,6 +19,9 @@ var playDeckBridge = (function() {
         else if (playdeck.method === "setScore") {
             console.log(playdeck);
         }
+		else if (playdeck.method === "getUserLocale") {
+            _unityInstance?.SendMessage("PlayDeckBridge", "GetUserLocaleHandler", JSON.stringify(playdeck.value))
+        }
     }
 
     return {
